@@ -33,6 +33,8 @@ if (HasCommand "scoop") {
         "ripgrep" = "rg"
         "openssh" = "ssh"
         "gow" = "wget.exe"
+        "tailblazer" = "tailblazer.exe"
+        "winmerge" = "winmergeu.exe"
     }
 
     foreach ($key in $desired_formulae.Keys) {
