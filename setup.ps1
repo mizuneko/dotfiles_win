@@ -117,7 +117,7 @@ function Deploy-Dotfiles {
         return
     }
     
-    $excluded = @("setup_win.ps1")
+    $excluded = @("setup.ps1")
     Get-ChildItem -File -Path $dotDirectory -Filter *.ps1 `
         | Where-Object { (-not $_.PSIsContainer) -and ($excluded -notcontains $_.Name) } `
         | ForEach-Object {
