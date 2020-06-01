@@ -3,8 +3,13 @@ setglobal cmdheight=2
 setglobal laststatus=2
 setglobal nowritebackup
 setglobal nobackup
-setglobal directory=$USERPROFILE/.vim/work
-setglobal undodir=$USERPROFILE/.vim/work
+if (has('win32') || has('win64'))
+	setglobal directory=$USERPROFILE/vimfiles/work
+	setglobal undodir=$USERPROFILE/vimfiles/work
+else
+	setglobal directory=$USERPROFILE/.vim/work
+	setglobal undodir=$USERPROFILE/.vim/work
+endif
 setglobal list
 setglobal relativenumber
 setglobal encoding=utf-8
@@ -100,7 +105,11 @@ end
 let g:plug_shallow = 0
 
 " プラグイン設定 {{{
-call plug#begin('~/.vim/plugged')
+if has('win32') || has('win64')
+	call plug#begin('~/vimfiles/plugged')
+else
+	call plug#begin('~/.vim/plugged')
+endif
 
 Plug 'jacoborus/tender.vim'
 Plug 'ryanoasis/vim-devicons'

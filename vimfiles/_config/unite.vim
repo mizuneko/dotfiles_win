@@ -1,8 +1,8 @@
-"ƒCƒ“ƒT[ƒgƒ‚[ƒh‚ÅŠJn‚µ‚È‚¢
+"ã‚¤ãƒ³ã‚µãƒ¼ãƒˆãƒ¢ãƒ¼ãƒ‰ã§é–‹å§‹ã—ãªã„
 let g:unite_enable_start_insert = 0
-"file_mru‚Ì•\¦ƒtƒH[ƒ}ƒbƒg‚ğw’èB‹ó‚É‚·‚é‚Æ•\¦ƒXƒs[ƒh‚ª‚‘¬‰»‚³‚ê‚é
+"file_mruã®è¡¨ç¤ºãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’æŒ‡å®šã€‚ç©ºã«ã™ã‚‹ã¨è¡¨ç¤ºã‚¹ãƒ”ãƒ¼ãƒ‰ãŒé«˜é€ŸåŒ–ã•ã‚Œã‚‹
 let g:unite_source_file_mru_filename_format = ''
-"data_directory ‚Íramdisk‚ğw’è
+"data_directory ã¯ramdiskã‚’æŒ‡å®š
 if has('win32')
   let g:unite_data_directory = '~/.unite'
 elseif  has('macunix')
@@ -10,7 +10,7 @@ elseif  has('macunix')
 else
   let g:unite_data_directory = '/mnt/ramdisk/.unite'
 endif
-"bookmark‚¾‚¯ƒz[ƒ€ƒfƒBƒŒƒNƒgƒŠ‚É•Û‘¶
+"bookmarkã ã‘ãƒ›ãƒ¼ãƒ ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ä¿å­˜
 let g:unite_source_bookmark_directory = '~/.unite/bookmark'
 if executable('rg')
 	let g:unite_source_grep_command = 'rg'
@@ -22,37 +22,37 @@ let g:webdevicons_enable_unite=1
 
 nnoremap [unite] <Nop>
 nmap <Space>f [unite]
-"Œ»İŠJ‚¢‚Ä‚¢‚éƒtƒ@ƒCƒ‹‚ÌƒfƒBƒŒƒNƒgƒŠ‰º‚Ìƒtƒ@ƒCƒ‹ˆê——B
-"ŠJ‚¢‚Ä‚¢‚È‚¢ê‡‚ÍƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ
+"ç¾åœ¨é–‹ã„ã¦ã„ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªä¸‹ã®ãƒ•ã‚¡ã‚¤ãƒ«ä¸€è¦§ã€‚
+"é–‹ã„ã¦ã„ãªã„å ´åˆã¯ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
 nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-"ƒoƒbƒtƒ@ˆê——
+"ãƒãƒƒãƒ•ã‚¡ä¸€è¦§
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-"ƒŒƒWƒXƒ^ˆê——
+"ãƒ¬ã‚¸ã‚¹ã‚¿ä¸€è¦§
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
-"Å‹ßg—p‚µ‚½ƒtƒ@ƒCƒ‹ˆê——
+"æœ€è¿‘ä½¿ç”¨ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ä¸€è¦§
 nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-"ƒuƒbƒNƒ}[ƒNˆê——
+"ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ä¸€è¦§
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
-"ƒuƒbƒNƒ}[ƒN‚É’Ç‰Á
+"ãƒ–ãƒƒã‚¯ãƒãƒ¼ã‚¯ã«è¿½åŠ 
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
-"unite‚ğŠJ‚¢‚Ä‚¢‚éŠÔ‚ÌƒL[ƒ}ƒbƒsƒ“ƒO
+"uniteã‚’é–‹ã„ã¦ã„ã‚‹é–“ã®ã‚­ãƒ¼ãƒãƒƒãƒ”ãƒ³ã‚°
 augroup vimrc
   autocmd FileType unite call s:unite_my_settings()
 augroup END
 function! s:unite_my_settings()
-  "ESC‚Åunite‚ğI—¹
+  "ESCã§uniteã‚’çµ‚äº†
   nmap <buffer> <ESC> <Plug>(unite_exit)
-  "“ü—Íƒ‚[ƒh‚Ì‚Æ‚«jk‚Åƒm[ƒ}ƒ‹ƒ‚[ƒh‚ÉˆÚ“®
+  "å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰ã®ã¨ãjkã§ãƒãƒ¼ãƒãƒ«ãƒ¢ãƒ¼ãƒ‰ã«ç§»å‹•
   imap <buffer> jk <Plug>(unite_insert_leave)
-  "“ü—Íƒ‚[ƒh‚Ì‚Æ‚«ctrl+w‚ÅƒoƒbƒNƒXƒ‰ƒbƒVƒ…‚àíœ
+  "å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰ã®ã¨ãctrl+wã§ãƒãƒƒã‚¯ã‚¹ãƒ©ãƒƒã‚·ãƒ¥ã‚‚å‰Šé™¤
   imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-  "s‚Åsplit
+  "sã§split
   nnoremap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('split'))
   inoremap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('split'))
-  "v‚Åvsplit
+  "vã§vsplit
   nnoremap <silent><buffer><expr> v unite#smart_map('v', unite#do_action('vsplit'))
   inoremap <silent><buffer><expr> v unite#smart_map('v', unite#do_action('vsplit'))
-  "f‚Åvimfiler
+  "fã§vimfiler
   nnoremap <silent><buffer><expr> f unite#smart_map('f', unite#do_action('vimfiler'))
   inoremap <silent><buffer><expr> f unite#smart_map('f', unite#do_action('vimfiler'))
 endfunction

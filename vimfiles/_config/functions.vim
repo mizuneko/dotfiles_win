@@ -1,4 +1,4 @@
-" �ҏW�ӏ��̃J�[�\�����L��
+" 編集箇所のカーソルを記憶
 if has("autocmd")
   augroup redhat
     " In text files, always limit the width of text to 78 characters
@@ -11,9 +11,13 @@ if has("autocmd")
   augroup END
 endif
 
-" Undo�̉i����
+" Undoの永続化
 if has('persistent_undo')
-	let undo_path = expand('~/.vim/undo')
+  if (has('win32') || has('win64'))
+    let undo_path = expand('~/vimfiles/undo')
+  else
+	  let undo_path = expand('~/.vim/undo')
+  endif
 	exe 'set undodir=' .. undo_path
 	set undofile
 endif
