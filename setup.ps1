@@ -5,7 +5,8 @@ Param (
 $account = "mizuneko"
 $repo    = "dotfiles_win"
 $branch  = "master"
-$dotDirectory = "${HOME}\dotfiles_win"
+$homepath = ${HOME}
+$dotDirectory = "${homepath}\dotfiles_win"
 $remoteUrl = "git@github.com:$account/$repo.git"
 
 $dotfilesTempDir = Join-Path $env:TEMP "dotfiles"
@@ -125,10 +126,10 @@ function Deploy-Dotfiles {
         }
     Get-ChildItem -File -Path $dotDirectory\home `
         | ForEach-Object {
-            New-Symlink "F" $_.FullName $home\$_
+            New-Symlink "F" $_.FullName $homepath\$_
         }
     New-Symlink "D" (Join-Path $dotDirectory "components") (Join-Path $profileDir "components")
-    New-Symlink "D" (Join-Path $dotDirectory "vimfiles") (Join-Path $home "vimfiles")
+    New-Symlink "D" (Join-Path $dotDirectory "vimfiles") (Join-Path $homepath "vimfiles")
 
     Write-Host "Deploy dotfiles complete!" -ForegroundColor Green
 }
