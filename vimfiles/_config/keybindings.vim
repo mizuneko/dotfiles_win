@@ -11,7 +11,7 @@ nnoremap <up> gk
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>re :%s;\<<C-R><C-W>\>;g<Left><Left>;
-nnoremap <Leader>. :new ~/_vimrc<CR>
+nnoremap <Leader>. :new ~/vimfiles/vimrc<CR>
 
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
