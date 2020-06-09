@@ -144,6 +144,7 @@ Plug 'rhysd/committia.vim'
 Plug 'cohama/agit.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'PProvost/vim-ps1'
 
 call plug#end()
 " }}}
