@@ -33,6 +33,8 @@ if (HasCommand "scoop") {
         "ripgrep" = "rg"
         "openssh" = "ssh"
         "gow" = "wget.exe"
+        "ruby" = "ruby"
+        "graphviz" = "dot"
         "tailblazer" = "tailblazer.exe"
         "winmerge" = "winmergeu.exe"
     }
